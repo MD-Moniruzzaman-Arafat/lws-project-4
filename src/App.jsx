@@ -2,6 +2,7 @@ import './App.css';
 import Glow from './components/Glow/Glow';
 import Navbar from './components/Navbar/Navbar';
 import SearchField from './components/SearchField/SearchField';
+import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import WelcomeMessage from './components/WelcomeMessage/WelcomeMessage';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <main className="relative z-10">
           <WelcomeMessage />
           <SearchField />
+          <SettingsPanel />
         </main>
       </div>
     </>

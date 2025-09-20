@@ -1,6 +1,7 @@
 import './App.css';
 import Glow from './components/Glow/Glow';
 import Navbar from './components/Navbar/Navbar';
+import Result from './components/Result/Result';
 import SearchField from './components/SearchField/SearchField';
 import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import WelcomeMessage from './components/WelcomeMessage/WelcomeMessage';
@@ -15,6 +16,7 @@ function App() {
           <WelcomeMessage />
           <SearchField />
           <SettingsPanel />
+          <Result />
         </main>
       </div>
     </>

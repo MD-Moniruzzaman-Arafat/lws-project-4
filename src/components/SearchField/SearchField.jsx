@@ -1,11 +1,16 @@
 import { useContext, useState } from 'react';
-import { AdvancedSettingsContext, ResultsContext } from '../../context';
+import {
+  AdvancedSettingsContext,
+  LoaderContext,
+  ResultsContext,
+} from '../../context';
 import loadData from '../../utils/fetchData';
 
 export default function SearchField() {
   const [search, setSearch] = useState('');
   const { query } = useContext(AdvancedSettingsContext);
   const { setResults } = useContext(ResultsContext);
+  const { setLoading } = useContext(LoaderContext);
 
   // onChange handler
   const handleChange = (e) => {
@@ -15,6 +20,7 @@ export default function SearchField() {
   // onSubmit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     let allData = [];
     for (let i = 0; i < 9; i++) {
       const data = await loadData(
@@ -28,6 +34,7 @@ export default function SearchField() {
       console.log(data);
     }
     setResults(allData);
+    setLoading(false);
     console.log(search);
   };
 

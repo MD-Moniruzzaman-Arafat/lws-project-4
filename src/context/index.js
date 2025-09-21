@@ -4,5 +4,12 @@ const AdvancedSettingsContext = createContext();
 const ResultsContext = createContext();
 const LoaderContext = createContext();
 const RouteContext = createContext();
+const DownloadedImagesContext = createContext();
 
-export { AdvancedSettingsContext, LoaderContext, ResultsContext, RouteContext };
+export {
+  AdvancedSettingsContext,
+  DownloadedImagesContext,
+  LoaderContext,
+  ResultsContext,
+  RouteContext,
+};

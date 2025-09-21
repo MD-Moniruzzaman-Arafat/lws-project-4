@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import AdvancedSettingsContextProvider from './context/AdvancedSettingsContextProvider.jsx';
+import DownloadImagesContextProvider from './context/DownloadImagesContextProvider.jsx';
 import LoaderContextProvider from './context/LoaderContextProvider.jsx';
 import ResultsContextProvider from './context/ResultsContextProvider.jsx';
 import RouteContextProvider from './context/RouteContextProvider.jsx';
@@ -13,7 +14,9 @@ createRoot(document.getElementById('root')).render(
       <AdvancedSettingsContextProvider>
         <LoaderContextProvider>
           <ResultsContextProvider>
-            <App />
+            <DownloadImagesContextProvider>
+              <App />
+            </DownloadImagesContextProvider>
           </ResultsContextProvider>
         </LoaderContextProvider>
       </AdvancedSettingsContextProvider>

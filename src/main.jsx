@@ -4,16 +4,19 @@ import App from './App.jsx';
 import AdvancedSettingsContextProvider from './context/AdvancedSettingsContextProvider.jsx';
 import LoaderContextProvider from './context/LoaderContextProvider.jsx';
 import ResultsContextProvider from './context/ResultsContextProvider.jsx';
+import RouteContextProvider from './context/RouteContextProvider.jsx';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AdvancedSettingsContextProvider>
-      <LoaderContextProvider>
-        <ResultsContextProvider>
-          <App />
-        </ResultsContextProvider>
-      </LoaderContextProvider>
-    </AdvancedSettingsContextProvider>
+    <RouteContextProvider>
+      <AdvancedSettingsContextProvider>
+        <LoaderContextProvider>
+          <ResultsContextProvider>
+            <App />
+          </ResultsContextProvider>
+        </LoaderContextProvider>
+      </AdvancedSettingsContextProvider>
+    </RouteContextProvider>
   </StrictMode>
 );

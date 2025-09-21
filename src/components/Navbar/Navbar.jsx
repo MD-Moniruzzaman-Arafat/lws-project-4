@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import logo from '../../assets/logo.svg';
+import { RouteContext } from '../../context';
 
 export default function Navbar() {
+  const { setRoute } = useContext(RouteContext);
   return (
     <>
       <header className="flex items-center mb-12 justify-between">
@@ -9,13 +12,13 @@ export default function Navbar() {
         </div>
         <ul className="ml-4 text-sm text-zinc-400 flex gap-8">
           <a
-            href="./index.html"
+            onClick={() => setRoute('create image')}
             className="hover:text-zinc-200 font-medium text-zinc-200 cursor-pointer transition-all"
           >
             Create Image
           </a>
           <a
-            href="./downloaded.html"
+            onClick={() => setRoute('download')}
             className="hover:text-zinc-200 cursor-pointer transition-all"
           >
             Downloaded
